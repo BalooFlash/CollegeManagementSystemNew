@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMst.master.cs" Inherits="CollegeMangementSystemNew.Admin.AdminMst" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>College Management System</title>
+    <meta charset="UTF-8">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+        <link href="../Content/styles.css" rel="stylesheet" />
+
+        <script src="../Scripts/jquery-3.0.0.min.js"></script>
+        <script src="../Scripts/popper.min.js"></script>
+        <script src="../Scripts/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $(".siderbar_menu li").click(function () {
+                    $(".siderbar_menu li").removeClass("active");
+                    $(this).addClass("active");
+                });
+
+                $(".hamburger").click(function () {
+                    $(".wrapper").addClass("active");
+                });
+
+                $(".close, .bg_shadow").click(function () {
+                    $(".wrapper").removeClass("active");
+                });
+            });
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <div class="wrapper">
+            <div class="sidebar">
+                <div class="bg_shadow"></div>
+                <div class="sidebar_inner">
+                    <div class="close">
+                        <i class="fas fa-times"></i>
+                    </div>
+
+                    <div class="profile_info">
+                        <div class="profile_img">
+                            <img src="../Image/logo.png" alt="profile_img">
+                        </div>
+                        <div class="profile_data">
+                            <p class="name">Admin Module</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Munich, Germany</span>
+                        </div>
+                    </div>
+
+                    <ul class="siderbar_menu">
+                        <li>
+                            <a href="../Admin/AdminHome.aspx">
+                                <div class="icon"><i class="fas fa-home"></i></div>
+                                <div class="title">Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-hotel"></i></div>
+                                <div class="title">Class</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Admin/AddClass.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Class</a></li>
+                                <li><a href="../Admin/ClassFees.aspx" class="active"><i class="fas fa-money-bill-alt pr-1"></i>Class Fees</a></li>
+                            </ul>
+                        </li>
+                      <%--  <li>
+                            <a href="../Admin/Subject.aspx">
+                                <div class="icon"><i class="fas fa-book"></i></div>
+                                <div class="title">Subjects</div>
+                            </a>
+                        </li>--%>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-user-tie"></i></div>
+                                <div class="title">Teachers</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Admin/Teacher.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Teachers</a></li>
+                                <li><a href="../Admin/TeacherSubject.aspx" class="active"><i class="fas fa-book-reader pr-1"></i>Teachers Subject</a></li>
+                                <li><a href="../Admin/Expense.aspx" class="active"><i class="fas fa-hand-holding-usd pr-1"></i>Add Expense</a></li>
+                                <li><a href="../Admin/ExpenseDetails.aspx" class="active"><i class="fas fa-money-check-alt pr-1"></i>Expense Details</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-user-graduate"></i></div>
+                                <div class="title">Students</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Admin/Student.aspx" class="active"><i class="fas fa-users pr-1"></i>Add Students</a></li>
+                                <li><a href="../Admin/StudAttendanceDetails.aspx" class="active"><i class="far fa-list-alt pr-1"></i>Attendance Details</a></li>
+                            </ul>
+
+                        </li>
+                      <%--  <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+                                <div class="title">Examination</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Admin/Marks.aspx" class="active"><i class="fas fa-notes-medical pr-1"></i>Add Marks</a></li>
+                                <li><a href="../Admin/MarkDetails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li>
+                            </ul>
+                        </li>--%>
+                        <li>
+                            <a href="#">
+                                <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                                <div class="title">Attendance</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Admin/EmployeeAttendance.aspx" class="active"><i class="fas fa-calendar-plus pr-1"></i>Employee Attendance</a></li>
+                                <li><a href="../Admin/EmpAttendanceDetails.aspx" class="active"><i class="fas fa-calendar-check pr-1"></i>Employee Details</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="logout_btn">
+                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false">Logout</asp:LinkButton>
+                    </div>
+
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="navbar">
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="logo">
+                        <a href="#">Munich University</a>
+                    </div>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
