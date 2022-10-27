@@ -111,7 +111,7 @@
                             </a>
                             <ul class="accordion">
                                 <li>< <a href="../Teacher/Marks.aspx"class="active"><i class="fas fa-notes-medical pr-1"></i>Add Marks</a></li>
-                                <li>< <a href="../Teacher/MarkDetails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li>
+                                <li>< <a href="../Admin/MarkDetails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li>
                             </ul>
                         </li>-
                         <li>

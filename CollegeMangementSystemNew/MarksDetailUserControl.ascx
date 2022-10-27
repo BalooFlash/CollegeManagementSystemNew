@@ -1,11 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/TeacherMst.Master" AutoEventWireup="true" CodeBehind="MarkDetails.aspx.cs" Inherits="CollegeMangementSystemNew.Teacher.MarkDetails" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MarksDetailUserControl.ascx.cs" Inherits="CollegeMangementSystemNew.MarksDetailUserControl" %>
 
-<%@ Register Src="~/MarksDetailUserControl.ascx" TagPrefix="uc" TagName="MarkDetails"%>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-     <%--<div style="width:100%;height:600px;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
+ <div style="width:100%;height:600px;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
     <div class="container p-md-4 p-sm-4">
         <div>
             <asp:Label ID="lblMsg" runat="server" Text="Label" Visible="False"></asp:Label>
@@ -79,9 +74,4 @@
 
     </div>
 
-    </div>--%>
-    <uc:MarkDetails runat="server" ID="MarkDetails1" />
-    
-
-
-</asp:Content>
+    </div>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CollegeMangementSystemNew.Teacher
+namespace CollegeMangementSystemNew.Admin
 {
 
 
