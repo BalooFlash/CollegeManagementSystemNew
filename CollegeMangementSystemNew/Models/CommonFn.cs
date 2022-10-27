@@ -13,6 +13,7 @@ namespace CollegeMangementSystemNew.Models
         public class Commonfnx
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CollegeCS"].ConnectionString);
+            //ConfigurationManager.ConnectionStrings["CollegeCS"].ConnectionString
 
             public void Query(String query)
             {

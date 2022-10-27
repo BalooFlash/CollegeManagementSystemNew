@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CollegeMangementSystemNew.Admin
+namespace CollegeMangementSystemNew.Teacher
 {
 
 
-    public partial class AddClass
+    public partial class MarkDetails
     {
 
         /// <summary>
@@ -24,13 +24,22 @@ namespace CollegeMangementSystemNew.Admin
         protected global::System.Web.UI.WebControls.Label lblMsg;
 
         /// <summary>
-        /// txtClass control.
+        /// ddlClass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClass;
+        protected global::System.Web.UI.WebControls.DropDownList ddlClass;
+
+        /// <summary>
+        /// txtRoll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRoll;
 
         /// <summary>
         /// btnAdd control.

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMst.master.cs" Inherits="CollegeMangementSystemNew.Admin.AdminMst" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TeacherMst.master.cs" Inherits="CollegeMangementSystemNew.Teacher.TeacherMst" %>
 
 <!DOCTYPE html>
 
@@ -45,11 +45,11 @@
                     </div>
 
                     <div class="profile_info">
-                        <%--<div class="profile_img">
+                        <div class="profile_img">
                             <img src="../Image/logo.png" alt="profile_img">
-                        </div>--%>
+                        </div>
                         <div class="profile_data">
-                            <p class="name">Admin Module</p>
+                            <p class="name">Teacher Module</p>
                             <span><i class="fas fa-map-marker-alt"></i>Munich, Germany</span>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 <div class="title">Home</div>
                             </a>
                         </li>
-                        <li>
+                      <%--  <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-hotel"></i></div>
                                 <div class="title">Course</div>
@@ -71,14 +71,14 @@
                                 <li><a href="../Admin/AddClass.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Course</a></li>
                                 <li><a href="../Admin/ClassFees.aspx" class="active"><i class="fas fa-money-bill-alt pr-1"></i>Course Fees</a></li>
                             </ul>
-                        </li>
-                        <li>
+                        </li>--%>
+                     <%--   <li>
                             <a href="../Admin/Subject.aspx">
                                 <div class="icon"><i class="fas fa-book"></i></div>
                                 <div class="title">Subjects</div>
                             </a>
-                        </li>
-                        <li>
+                        </li>--%>
+                     <%--   <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-user-tie"></i></div>
                                 <div class="title">Teachers</div>
@@ -90,7 +90,7 @@
                               <%--  <li><a href="../Admin/Expense.aspx" class="active"><i class="fas fa-hand-holding-usd pr-1"></i>Add Expense</a></li>
                                 <li><a href="../Admin/ExpenseDetails.aspx" class="active"><i class="fas fa-money-check-alt pr-1"></i>Expense Details</a></li>--%>
                             </ul>
-                        </li>
+                        </li>--%>
                         <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-user-graduate"></i></div>
@@ -98,23 +98,23 @@
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li><a href="../Admin/Student.aspx" class="active"><i class="fas fa-users pr-1"></i>Add Students</a></li>
-                                <li><a href="../Teacher/StudAttendanceDetails.aspx" class="active"><i class="far fa-list-alt pr-1"></i>Attendance Details</a></li>
+                                <%--<li><a href="../Admin/Student.aspx" class="active"><i class="fas fa-users pr-1"></i>Add Students</a></li>--%>
+                                <li><a href="StudAttendanceDetails.aspx" class="active"><i class="far fa-list-alt pr-1"></i>Attendance Details</a></li>
                             </ul>
 
                         </li>
-                        <li>
+                      <%--  <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-clipboard-list"></i></div>
                                 <div class="title">Examination</div>
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
-                                <li>< <a href="../Teacher/Marks.aspx"class="active"><i class="fas fa-notes-medical pr-1"></i>Add Marks</a></li>
-                                <li>< <a href="../Teacher/MarkDetails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li>
+                                <li><a href="../Admin/Marks.aspx" class="active"><i class="fas fa-notes-medical pr-1"></i>Add Marks</a></li>
+                                <li><a href="../Admin/MarkDetails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li>
                             </ul>
-                        </li>-
-                        <li>
+                        </li>---%>
+                      <%--  <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-calendar-alt"></i></div>
                                 <div class="title">Attendance</div>
@@ -124,7 +124,7 @@
                                 <li><a href="../Admin/EmployeeAttendance.aspx" class="active"><i class="fas fa-calendar-plus pr-1"></i>Employee Attendance</a></li>
                                 <li><a href="../Admin/EmpAttendanceDetails.aspx" class="active"><i class="fas fa-calendar-check pr-1"></i>Employee Details</a></li>
                             </ul>
-                        </li>
+                        </li>--%>
                     </ul>
 
                     <div class="logout_btn">
