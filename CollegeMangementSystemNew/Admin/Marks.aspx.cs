@@ -7,14 +7,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using static CollegeMangementSystemNew.Models.CommonFn;
 
-namespace CollegeMangementSystemNew.Teacher
+namespace CollegeMangementSystemNew.Admin
 {
     public partial class Marks : System.Web.UI.Page
     {
+
         Commonfnx fn = new Commonfnx();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 GetClass();
@@ -39,8 +40,8 @@ namespace CollegeMangementSystemNew.Teacher
             ddlClass.DataTextField = "ClassName";
             ddlClass.DataValueField = "ClassId";
             ddlClass.DataBind();
-          //  ddlClass.Items.Insert(0, new ListItem("--Select--"));
-          
+            //  ddlClass.Items.Insert(0, new ListItem("--Select--"));
+
         }
 
         protected void ddlClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,33 +66,33 @@ namespace CollegeMangementSystemNew.Teacher
                 string studMarks = txtStudMarks.Text.Trim();
                 string outOfMarks = txtOutOfMarks.Text.Trim();
 
-               
-                    DataTable dt = fn.Fetch("Select * from Exam where ClassId='" + classId +
-                   "'and SubjectId='" + subjectId + "'and RollNo='" + rollNo + "'");
 
-                    if (dt.Rows.Count == 0)
-                    {
-                        string query = "Insert into Exam values('" + classId + "','" + subjectId + "','" + rollNo + "','" + studMarks + "','" + outOfMarks + "')";
-                        fn.Query(query);
-                        lblMsg.Visible = true;
-                        lblMsg.Text = "Inserted Successfully";
-                        lblMsg.CssClass = "alert alert-success";
-                        ddlClass.SelectedIndex = 0;
-                        ddlSubject.SelectedIndex = 0;
-                        txtRoll.Text = string.Empty;
-                        txtStudMarks.Text = string.Empty;
-                        txtOutOfMarks.Text = string.Empty;
-                        GetMarks();
+                DataTable dt = fn.Fetch("Select * from Exam where ClassId='" + classId +
+               "'and SubjectId='" + subjectId + "'and RollNo='" + rollNo + "'");
 
-                    }
-                    else
-                    {
-                        lblMsg.Visible = true;
+                if (dt.Rows.Count == 0)
+                {
+                    string query = "Insert into Exam values('" + classId + "','" + subjectId + "','" + rollNo + "','" + studMarks + "','" + outOfMarks + "')";
+                    fn.Query(query);
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Inserted Successfully";
+                    lblMsg.CssClass = "alert alert-success";
+                    ddlClass.SelectedIndex = 0;
+                    ddlSubject.SelectedIndex = 0;
+                    txtRoll.Text = string.Empty;
+                    txtStudMarks.Text = string.Empty;
+                    txtOutOfMarks.Text = string.Empty;
+                    GetMarks();
 
-                        lblMsg.Text = "Entered <b>Data </b> Already exsits for course";
-                        lblMsg.CssClass = "alert alert-danger";
-                    }
-               
+                }
+                else
+                {
+                    lblMsg.Visible = true;
+
+                    lblMsg.Text = "Entered <b>Data </b> Already exsits for course";
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+
 
             }
             catch (Exception ex)
@@ -107,7 +108,7 @@ namespace CollegeMangementSystemNew.Teacher
             GetMarks();
         }
 
-    
+
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
@@ -121,7 +122,7 @@ namespace CollegeMangementSystemNew.Teacher
             GetMarks();
         }
 
-            protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             try
             {
@@ -150,9 +151,9 @@ namespace CollegeMangementSystemNew.Teacher
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
-            if(e.Row.RowType==DataControlRowType.DataRow)
+            if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if((e.Row.RowState & DataControlRowState.Edit)>0)
+                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
                 {
                     DropDownList ddlCourse = (DropDownList)e.Row.FindControl("ddlClassGV");
                     DropDownList ddlSubject = (DropDownList)e.Row.FindControl("ddlSubjectGV");
@@ -163,7 +164,7 @@ namespace CollegeMangementSystemNew.Teacher
                     ddlSubject.DataBind();
                     ddlSubject.Items.Insert(0, "Select Subject");
                     string selectedSubject = DataBinder.Eval(e.Row.DataItem, "SubjectName").ToString();
-                   //ddlSubject.Items.FindByText(selectedSubject).Selected = true;
+                    //ddlSubject.Items.FindByText(selectedSubject).Selected = true;
 
 
                 }
@@ -174,9 +175,9 @@ namespace CollegeMangementSystemNew.Teacher
         {
             DropDownList ddlClassSelected = (DropDownList)sender;
             GridViewRow row = (GridViewRow)ddlClassSelected.NamingContainer;
-            if(row!=null)
+            if (row != null)
             {
-                if((row.RowState & DataControlRowState.Edit)>0)
+                if ((row.RowState & DataControlRowState.Edit) > 0)
                 {
                     DropDownList ddlSubjectGV = (DropDownList)row.FindControl("ddlSubjectGV");
                     DataTable dt = fn.Fetch("Select * from Subject where ClassId='" + ddlClassSelected.SelectedValue + "'");

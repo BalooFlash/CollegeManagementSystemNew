@@ -33,7 +33,7 @@
         </div>
 
           <div class="row mb-3 mr-lg-5 ml-lg-5 ">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <asp:GridView Id="GridView1" runat="server" CssClass="table table-hover table-bordered" EmptyDataText="No record to display" 
                     AutoGenerateColumns="False" AllowPaging="True" PageSize="4" OnPageIndexChanging ="GridView1_PageIndexChanging" DataKeyNames="SubjectId"
                     OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" 

@@ -14,6 +14,7 @@ namespace CollegeMangementSystemNew
         Commonfnx fn = new Commonfnx();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 GetClass();
@@ -47,9 +48,9 @@ namespace CollegeMangementSystemNew
                 string classId = ddlClass.SelectedValue;
                 string rollNo = txtRoll.Text.Trim();
                 DataTable dt = fn.Fetch(@"Select ROW_NUMBER() OVER(ORDER BY(Select 1)) as [Sr.No], e.ExamId, e.ClassId, c.ClassName,
-                                  e.SubjectId, s.SubjectName, e.RollNo, e.TotalMarks, e.OutOfMarks from Exam e 
-                                  inner join Class c on c.ClassId = e.ClassId inner join Subject s on s.SubjectId = e.SubjectId
-                                  where e.ClassId ='" + classId + "' add e.RollNo= '" + rollNo + "' ");
+                                        e.SubjectId, s.SubjectName, e.RollNo, e.TotalMarks, e.OutOfMarks from Exam e
+                                        inner join Class c on c.ClassId = e.ClassId inner join Subject s on s.SubjectId = e.SubjectId
+                                        where e.ClassId = '"+classId+"'and e.RollNo = '"+rollNo+"' ");
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }

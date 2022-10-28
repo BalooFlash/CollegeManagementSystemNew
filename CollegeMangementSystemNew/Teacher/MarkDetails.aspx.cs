@@ -15,6 +15,7 @@ namespace CollegeMangementSystemNew.Teacher
         //Commonfnx fn = new Commonfnx();
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             //if (!IsPostBack)
             //{
             //    GetClass();

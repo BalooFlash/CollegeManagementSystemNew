@@ -13,5 +13,11 @@ namespace CollegeMangementSystemNew.Teacher
         {
 
         }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("../Login.aspx");
+        }
     }
 }

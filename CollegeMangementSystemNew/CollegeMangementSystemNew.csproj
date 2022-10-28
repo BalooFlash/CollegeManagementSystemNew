@@ -75,7 +75,9 @@
     <Content Include="Admin\EmpAttendanceDetails.aspx" />
     <Content Include="Admin\EmployeeAttendance.aspx" />
     <Content Include="Admin\MarkDetails.aspx" />
+    <Content Include="Admin\Marks.aspx" />
     <Content Include="Admin\Student.aspx" />
+    <Content Include="Admin\StudentAttendanceDetails.aspx" />
     <Content Include="Admin\Subject.aspx" />
     <Content Include="Admin\Teacher.aspx" />
     <Content Include="Admin\TeacherSubject.aspx" />
@@ -86,9 +88,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\styles.css" />
-    <Content Include="Image\bg.png" />
+    <Content Include="Image\bg1.png" />
     <Content Include="Image\login.png" />
     <Content Include="Image\logo.png" />
+    <Content Include="Login.aspx" />
     <Content Include="MarksDetailUserControl.ascx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -190,9 +193,11 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="StudentAttendanceUC.ascx" />
     <Content Include="Teacher\MarkDetails.aspx" />
     <Content Include="Teacher\Marks.aspx" />
-    <Content Include="Teacher\StudAttendanceDetails.aspx" />
+    <Content Include="Teacher\StudentAttendance.aspx" />
+    <Content Include="Teacher\StudentAttendanceDetails.aspx" />
     <Content Include="Teacher\TeacherHome.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -256,12 +261,26 @@
     <Compile Include="Admin\MarkDetails.aspx.designer.cs">
       <DependentUpon>MarkDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Marks.aspx.cs">
+      <DependentUpon>Marks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Marks.aspx.designer.cs">
+      <DependentUpon>Marks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Student.aspx.cs">
       <DependentUpon>Student.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Student.aspx.designer.cs">
       <DependentUpon>Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StudentAttendanceDetails.aspx.cs">
+      <DependentUpon>StudentAttendanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StudentAttendanceDetails.aspx.designer.cs">
+      <DependentUpon>StudentAttendanceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Subject.aspx.cs">
       <DependentUpon>Subject.aspx</DependentUpon>
@@ -285,6 +304,13 @@
       <DependentUpon>TeacherSubject.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppHandler.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MarksDetailUserControl.ascx.cs">
       <DependentUpon>MarksDetailUserControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,6 +320,13 @@
     </Compile>
     <Compile Include="Models\CommonFn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentAttendanceUC.ascx.cs">
+      <DependentUpon>StudentAttendanceUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAttendanceUC.ascx.designer.cs">
+      <DependentUpon>StudentAttendanceUC.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\MarkDetails.aspx.cs">
       <DependentUpon>MarkDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,12 +341,19 @@
     <Compile Include="Teacher\Marks.aspx.designer.cs">
       <DependentUpon>Marks.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Teacher\StudAttendanceDetails.aspx.cs">
-      <DependentUpon>StudAttendanceDetails.aspx</DependentUpon>
+    <Compile Include="Teacher\StudentAttendance.aspx.cs">
+      <DependentUpon>StudentAttendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Teacher\StudAttendanceDetails.aspx.designer.cs">
-      <DependentUpon>StudAttendanceDetails.aspx</DependentUpon>
+    <Compile Include="Teacher\StudentAttendance.aspx.designer.cs">
+      <DependentUpon>StudentAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\StudentAttendanceDetails.aspx.cs">
+      <DependentUpon>StudentAttendanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\StudentAttendanceDetails.aspx.designer.cs">
+      <DependentUpon>StudentAttendanceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher\TeacherHome.aspx.cs">
       <DependentUpon>TeacherHome.aspx</DependentUpon>

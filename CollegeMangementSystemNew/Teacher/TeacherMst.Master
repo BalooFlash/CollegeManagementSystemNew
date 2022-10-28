@@ -30,7 +30,26 @@
                     $(".wrapper").removeClass("active");
                 });
             });
+
         </script>
+  
+        <%--Making menu selected for active page--%>
+        <script>
+            $(function () {
+        // this will get the full URL at the address bar
+        var url = window.location.href;
+
+            // passes on every "a" tag 
+            $("#sub-header a").each(function () {
+            // checks if its the same on the address bar
+            if (url == (this.href)) {
+                $(this).closest("li").addClass("active");
+            }
+        });
+
+    });
+    </script>
+   
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -39,14 +58,14 @@
          <div class="wrapper">
             <div class="sidebar">
                 <div class="bg_shadow"></div>
-                <div class="sidebar_inner">
+                <div class="sidebar_inner" id="#sub-header a">
                     <div class="close">
                         <i class="fas fa-times"></i>
                     </div>
 
                     <div class="profile_info">
                         <div class="profile_img">
-                            <img src="../Image/logo.png" alt="profile_img">
+                          <%--  <img src="../Image/logo.png" alt="profile_img">--%>
                         </div>
                         <div class="profile_data">
                             <p class="name">Teacher Module</p>
@@ -68,7 +87,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../Teacher/StudAttendanceDetails.aspx">
+                            <a href="../Teacher/StudentAttendanceDetails.aspx">
                                 <div class="icon"><i class="fas fa-address-card"></i></div>
                                 <div class="title">Attendence Details</div>
                             </a>
@@ -84,7 +103,7 @@
                     </ul>
 
                     <div class="logout_btn">
-                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false">Logout</asp:LinkButton>
+                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false" OnClick="btnLogOut_Click">Logout</asp:LinkButton>
                     </div>
 
                 </div>
